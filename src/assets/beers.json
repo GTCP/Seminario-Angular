@@ -1,0 +1,31 @@
+{
+  "beers" : {
+    "-KbNnvjgxldxzB4lqHPP" : {
+      "name": "Negra Fuerte",
+      "style": "Porter",
+      "price": 20,
+      "stock": 2,
+      "image": "/images/porter.jpg",
+      "clearance": true,
+      "quantity": 0
+    },
+    "-KbNnyG2JWf9RcCWvIFe" : {
+      "name": "Red Red Wine",
+      "style": "Barley Wine",
+      "price": 40,
+      "stock": 3,
+      "image": "/images/barley_wine.jpg",
+      "clearance": false,
+      "quantity": 0
+    },
+    "-KbNoToPmUUs3Xt-cnXR" : {
+     "name": "La Rubia",
+     "style": "Golden Ale",
+     "price": 23.5,
+     "stock": 0,
+     "image": "/images/blonde.png",
+     "clearance": false,
+     "quantity": 0
+    }
+  }
+}

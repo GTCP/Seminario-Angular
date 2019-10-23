@@ -1,0 +1,40 @@
+
+  <div class="col-6">
+<div table-responsive>
+<table class="table class fondotabla">
+    <thead>
+      <tr class="table table-dark">
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">style</th>
+        <th scope="col">price</th>
+        <th scope="col">clearance</th>
+        <th scope="col">Stock</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beer of beers" [class.clearance]="beer.clearance"
+      [ngClass]= "{
+        'green' : beer.stock >= 5 ,
+        'red' : beer.stock === 0
+      }
+      ">
+
+        <td><img class="tamañodeimagenbirra" [src]='beer.image' [alt]='beer.name'></td>
+        <td>{{beer.name}}</td>
+        <td>{{beer.style}}</td>
+        <td>{{beer.price | currency: '$':true: '1.2-2'}}</td>
+        <td>{{beer.clearance}}</td>
+        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"> {{beer.stock}}</span></td>
+        <td> <button class="btn btn-primary" (click)="agregarEnStock(beer)"> Agregar</button></td>
+        <td> <button class="btn btn-primary" [disabled]="beer.stock <= 0" (click)="agregarAlCarrito(beer)">Agregar al carrito</button></td>
+        <td> <button class="btn btn-primary" [disabled]="beer.stock <= 0" (click)="sacarEnStock(beer)"> Restar </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-beercart></app-beercart>
+</div>

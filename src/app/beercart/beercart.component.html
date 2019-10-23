@@ -1,0 +1,35 @@
+
+  <div class="col-6">
+    <div table-responsive>
+    <table class="table class fondotabla">
+        <thead>
+          <tr class="table table-dark">
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">style</th>
+            <th scope="col">price</th>
+            <th scope="col">clearance</th>
+            <th scope="col">quantity</th>
+            <th scope="col">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let beer of beers" [class.clearance]="beer.clearance"
+          [ngClass]= "{
+            'green' : beer.stock >= 5 ,
+            'red' : beer.stock === 0
+          }
+          ">
+            <td><img class="tamañodeimagenbirra" [src]='beer.image' [alt]='beer.name'></td>
+            <td>{{beer.name}}</td>
+            <td>{{beer.style}}</td>
+            <td>{{beer.price | currency: '$':true: '1.2-2'}}</td>
+            <td>{{beer.clearance}}</td>
+            <td>{{beer.quantity}}</td>
+            <td *ngIf="beer.stock > 0"><span class="glyphicon glyphicon-ok" aria-hidden="true"> {{beer.stock}}</span></td>
+            <td class="" *ngIf="beer.stock == 0"><span class="glyphicon glyphicon-remove" aria-hidden="true"> AGOTADO</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
